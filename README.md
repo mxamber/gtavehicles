@@ -6,22 +6,25 @@ In `gtavehicles.json` I've compiled a (as yet incomplete) list of GTA Online's v
 A vehicle should have the following  data:
 
 ```
-short name: internal identifier, need not match game files. is object name.
-  name: in-game name
-  maker: manufacturer, if one exists
-  price_trade: discounted price if one exists
-  price_full: regular price
-  storage: what property it's stored in, or "none"
-  type: car/plane/helicopter/drone
-  venue: warstock/superautos/motorsport/elitas/docktease
-  capacity: incl. driver
-  customizable: yes/no (only respray = no)
-  weaponized: is or can be weaponized
-  is_personal: can be stored in a personal garage?
-  is_pegasus: can be ordered from pegasus?
-  is_special: can be spawned via interaction menu (services/special vehicles/ceo vehicles)
-  enables: an array of vehicles or properties unlocked by this one
-  depends: an array of vehicles or properties this vehicle requires (AND/OR, incl. ones required to customize the car, e.g. Avenger or Terrorbyte)
+id {
+  name        (string): in-game name
+  maker       (string): manufacturer, if one exists
+  price_trade    (int): discounted price if one exists
+  price_full     (int): regular price
+  storage     (string): what property it's stored in, or "none"
+  type        (string): car/plane/helicopter/drone
+  venue       (string): warstock/superautos/motorsport/elitas/docktease
+  capacity       (int): incl. driver
+  customizable  (bool): yes/no (only respray = no)
+  weaponized    (bool): is or can be weaponized
+  is_personal   (bool): can be stored in a personal garage?
+  is_pegasus    (bool): can be ordered from pegasus?
+  is_special    (bool): can be spawned via interaction menu
+                        (services/special vehicles/ceo vehicles)
+  enables   (string[]): vehicles or properties unlocked by this one
+  depends   (string[]): vehicles or properties this vehicle requires (AND/OR)
+                        (incl. ones required to customize the car, e.g. Avenger)
+}
 ```
 
 ## Contributing
